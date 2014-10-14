@@ -1,0 +1,30 @@
+.table{
+	@include make-xs-column(12);
+	@include make-sm-column(12);
+	@include make-md-column(12);
+	margin-top: 20px;
+	.table-header{
+		padding: 25px;
+		border-bottom: 2px solid #cecece;
+		.item{
+			@include make-xs-column(12);
+			@include make-sm-column(2);
+			@include make-md-column(2);
+			float: left;
+			text-align: center;
+		}
+	}
+}
+
+.table-body{
+	padding: 8px;
+	border-bottom: 1px solid #cecece;
+	@include clearfix();
+	.item{
+			@include make-xs-column(12);
+			@include make-sm-column(2);
+			@include make-md-column(2);
+			float: left;
+			text-align: center;
+		}
+}

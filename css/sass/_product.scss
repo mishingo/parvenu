@@ -1,0 +1,21 @@
+.product{
+	margin-top: 20px;
+	@include clearfix();
+}
+.product-gallery{
+	@include make-xs-column(12);
+	@include make-sm-column(6);
+	@include make-md-column(6);
+	float: left;
+	img{
+        @include img-responsive();
+    }
+}
+
+.product-content{
+	@include make-xs-column(12);
+	@include make-sm-column(6);
+	@include make-md-column(6);
+	float: left;
+	padding: 0px 40px;
+}

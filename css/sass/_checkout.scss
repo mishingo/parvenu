@@ -1,0 +1,107 @@
+.check-out{
+	margin-top: 30px;
+	@include make-sm-column(12);
+	@include make-md-column(12);
+	@include make-md-column(12);
+	@include clearfix();
+}
+.user-info{
+	@include make-sm-column(12);
+	@include make-md-column(6);
+	@include make-md-column(6);
+	padding: 0px 20px;
+	float: left;
+	font-size: $base-font-size;
+	h3{
+		margin-bottom: 20px;
+	}
+}
+
+.product-review{
+	@include make-sm-column(12);
+	@include make-md-column(6);
+	@include make-md-column(6);
+	float: left;
+	font-size: 1em;
+}
+
+
+
+.form-group {
+	padding: 0px 15px;
+  	margin-bottom: 15px;
+}
+
+label {
+  display: inline-block;
+  max-width: 100%; // Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+       -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+          transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.form-control:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+          box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+}
+
+.form-row{
+	@include clearfix();
+}
+.c-5{
+	width: 50%;
+	padding: 0px 15px;
+	float: left;
+
+}
+
+.border-bottom{
+	border-bottom: 1px solid #cecece;
+}
+.review-row{
+	@include make-sm-column(12);
+	@include make-md-column(12);
+	@include make-md-column(12);
+	@include clearfix();
+	h3{
+		margin-top: 15px;
+	}
+}
+
+.review-item{
+	@include make-sm-column(12);
+	@include make-md-column(5);
+	@include make-md-column(5);
+	float: left;
+}
+.review-price{
+	@include make-sm-column(12);
+	@include make-md-column(3);
+	@include make-md-column(3);
+	float: left;
+}
+.review-quantity{
+	@include make-sm-column(12);
+	@include make-md-column(4);
+	@include make-md-column(4);
+	float: left;
+}

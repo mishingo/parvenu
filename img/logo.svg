@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="227px" height="43px" viewBox="0 0 227 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.0.4 (8054) - http://www.bohemiancoding.com/sketch -->
+    <title>logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#606060" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Desktop-HD" sketch:type="MSArtboardGroup" transform="translate(-32.000000, -24.000000)">
+            <g id="Navbar" sketch:type="MSLayerGroup" transform="translate(0.000000, -9.000000)">
+                <g id="logo" transform="translate(29.000000, 0.000000)">
+                    <text id="parvenu-2" fill="url(#linearGradient-1)" sketch:type="MSTextLayer" font-family="Khmer MN" font-size="64" font-weight="normal">
+                        <tspan x="0" y="63" fill="#D8D0DF">pa</tspan>
+                        <tspan x="61.125" y="63" letter-spacing="3.79999971" fill="#D8D0DF">r</tspan>
+                        <tspan x="87.0187497" y="63" letter-spacing="-2.86102306e-07" fill="#D8D0DF">ve</tspan>
+                        <tspan x="146.487499" y="63" fill="#D8D0DF">nu</tspan>
+                    </text>
+                    <g id="fancy" transform="translate(216.000000, 37.000000)" fill="#FB4B4B" sketch:type="MSShapeGroup">
+                        <circle id="Oval-1" cx="5" cy="12" r="5"></circle>
+                        <circle id="Oval-2" cx="12" cy="2" r="2"></circle>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
