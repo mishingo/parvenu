@@ -1,4 +1,8 @@
-<?php include "includes/functions.php"; ?>
+<?php include "includes/functions.php"; 
+
+session_start();
+
+?>
 
 <!DOCTYPE html>
 <html class="no-js" lang="">
