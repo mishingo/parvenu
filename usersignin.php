@@ -11,18 +11,9 @@
 				//Open database connection
 				get_dbconnection();
 
-				//Strip Slashes
-				$useremail = stripslashes($useremail);
-				$userpassword = stripslashes($userpassword);
-
-				//Real Escape String
-				$useremail = mysql_real_escape_string($useremail);
-				$userpassword = mysql_real_escape_string($userpassword);
-
 				//Create and run SQL query
 				$sql="SELECT password FROM Users WHERE email='$useremail'";
 				$result = mysqli_query(get_dbconnection(),$sql);
-
 
 				//Check for results, if yes (test password), if no (the account doesn't exist).
 				if(mysqli_num_rows($result)){

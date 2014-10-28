@@ -20,10 +20,10 @@
 				$userlname = stripslashes($userlname);
 
 				//Real Escape String
-				$useremail = mysql_real_escape_string($useremail);
-				$userpassword = mysql_real_escape_string($userpassword);
-				$userfname = mysql_real_escape_string($userfname);
-				$userlname = mysql_real_escape_string($userlname);
+				$useremail = $db_connection->real_escape_string($useremail);
+				$userpassword = $db_connection->real_escape_string($userpassword);
+				$userfname = $db_connection->real_escape_string($userfname);
+				$userlname = $db_connection->real_escape_string($userlname);
 
 				//Load Password hashing.
 				require 'PasswordHash.php';
