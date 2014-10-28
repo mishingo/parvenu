@@ -4,6 +4,8 @@
 
 			<?php 
 
+				get_dbconnection();
+
 				$useremail=$_POST['siemail']; 
 				$userpassword=$_POST['sipassword']; 
 
@@ -16,12 +18,22 @@
 				$sql="SELECT password FROM Users WHERE email='$useremail'";
 				$result = mysqli_query(get_dbconnection(),$sql);
 
+
+
 				if(mysqli_num_rows($result)){
 
 					$row = mysqli_fetch_array($result);
 					$hash = $row[0];
 
-					if (password_verify($userpassword, $hash)) {
+					require 'PasswordHash.php';
+
+					$hash_cost_log2 = 8;
+					$hash_portable = FALSE;
+					$hasher = new PasswordHash($hash_cost_log2, $hash_portable);
+					$check = $hasher->CheckPassword($userpassword, $hash);
+					if ($check) $ok++;
+
+					if ($check == 1) {
 						session_start();
 						session_unset(); 
 						$_SESSION["currentuser"] = $useremail;
