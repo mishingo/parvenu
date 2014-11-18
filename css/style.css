@@ -3,7 +3,7 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 @import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,500,700);
-/* line 5, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 5, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -25,45 +25,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
@@ -110,7 +110,7 @@ body {
   -webkit-font-smoothing: antialiased;
   color: #333;
   font-family: "Lato", sans-serif;
-  font-size: 1.4em;
+  font-size: 1.3em;
   line-height: 1.5;
   font-weight: 300;
 }
@@ -130,37 +130,37 @@ h6 {
 
 /* line 22, sass/_type.scss */
 h1 {
-  font-size: 3.15em;
+  font-size: 2.925em;
 }
 
 /* line 26, sass/_type.scss */
 h2 {
-  font-size: 2.8em;
+  font-size: 2.6em;
 }
 
 /* line 30, sass/_type.scss */
 h3 {
-  font-size: 2.45em;
+  font-size: 2.275em;
 }
 
 /* line 34, sass/_type.scss */
 h4 {
-  font-size: 2.1em;
+  font-size: 1.95em;
 }
 
 /* line 38, sass/_type.scss */
 h5 {
-  font-size: 1.75em;
+  font-size: 1.625em;
 }
 
 /* line 42, sass/_type.scss */
 h6 {
-  font-size: 1.4em;
+  font-size: 1.3em;
 }
 
 /* line 46, sass/_type.scss */
 p {
-  font-size: 1.4em;
+  font-size: 1.3em;
   font-weight: 400;
 }
 
@@ -232,7 +232,7 @@ a:active, a:focus {
 
 /* line 27, sass/_base.scss */
 .hero {
-  background: url("../img/hero.png") no-repeat center;
+  background: url("../img/hero.jpg") no-repeat center;
   height: 350px;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -462,9 +462,28 @@ a:active, a:focus {
   cursor: pointer;
   transition: background-color 0.5s ease;
   background: #6982D9;
+  text-decoration: none;
 }
 
-/* line 145, sass/_base.scss */
+/* line 146, sass/_base.scss */
+.button-small {
+  transition: background-color 0.5s ease;
+  padding: 5px 17px;
+  border-radius: 40px;
+  background: #8B69D9;
+  border: none;
+  color: #fff;
+}
+
+/* line 155, sass/_base.scss */
+.button-small:hover {
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+  background: #6982D9;
+  text-decoration: none;
+}
+
+/* line 163, sass/_base.scss */
 .button-a {
   transition: background-color 0.5s ease;
   display: block;
@@ -483,15 +502,92 @@ a:active, a:focus {
   text-decoration: none;
 }
 
-/* line 164, sass/_base.scss */
+/* line 182, sass/_base.scss */
 .button-a:hover {
   text-decoration: none;
   transition: background-color 0.5s ease;
   background: #6982D9;
   color: #fff;
+  cursor: pointer;
 }
 
-/* line 171, sass/_base.scss */
+/* line 190, sass/_base.scss */
+.button-delete {
+  transition: background-color 0.5s ease;
+  margin-left: 15px;
+  display: block;
+  width: 100px;
+  height: 40px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: 40px;
+  background: #e13434;
+  border: none;
+  color: #fff;
+  font-size: 1.4em;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* line 209, sass/_base.scss */
+.button-delete:hover {
+  text-decoration: none;
+  transition: background-color 0.5s ease;
+  background: #ba2929;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* line 217, sass/_base.scss */
+.button-inline {
+  transition: background-color 0.5s ease;
+  padding: 10px 20px;
+  border-radius: 40px;
+  background: #8B69D9;
+  border: none;
+  color: #fff;
+  margin-left: 20px;
+}
+
+/* line 227, sass/_base.scss */
+.button-inline:hover {
+  text-decoration: none;
+  transition: background-color 0.5s ease;
+  background: #6982D9;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* line 236, sass/_base.scss */
+.form-group .form-update {
+  float: left;
+  width: 65% !important;
+}
+
+/* line 244, sass/_base.scss */
+.card .form-update {
+  float: left;
+  width: 65% !important;
+}
+
+/* line 14, sass/_mixins.scss */
+form:before, form:after {
+  content: " ";
+  display: table;
+}
+/* line 19, sass/_mixins.scss */
+form:after {
+  clear: both;
+}
+
+/* line 253, sass/_base.scss */
+textarea#product_description {
+  height: 120px;
+}
+
+/* line 257, sass/_base.scss */
 .social-testimonial {
   padding-left: 15px;
   padding-right: 15px;
@@ -511,13 +607,13 @@ a:active, a:focus {
   margin-top: 20px;
 }
 @media (min-width: 768px) {
-  /* line 171, sass/_base.scss */
+  /* line 257, sass/_base.scss */
   .social-testimonial {
     width: 100%;
   }
 }
 @media (min-width: 992px) {
-  /* line 171, sass/_base.scss */
+  /* line 257, sass/_base.scss */
   .social-testimonial {
     width: 100%;
   }
@@ -531,7 +627,7 @@ a:active, a:focus {
 .social-testimonial:after {
   clear: both;
 }
-/* line 179, sass/_base.scss */
+/* line 265, sass/_base.scss */
 .social-testimonial .testimonial-card {
   position: relative;
   width: 33.33333%;
@@ -550,37 +646,42 @@ a:active, a:focus {
   padding: 20px 10px;
 }
 @media (min-width: 768px) {
-  /* line 179, sass/_base.scss */
+  /* line 265, sass/_base.scss */
   .social-testimonial .testimonial-card {
     width: 25%;
   }
 }
 @media (min-width: 992px) {
-  /* line 179, sass/_base.scss */
+  /* line 265, sass/_base.scss */
   .social-testimonial .testimonial-card {
     width: 25%;
   }
 }
 
-/* line 189, sass/_base.scss */
+/* line 275, sass/_base.scss */
 .card {
   padding: 10px;
   border: 1px solid #cecece;
   border-radius: 6px;
 }
-/* line 193, sass/_base.scss */
-.card p {
-  margin-top: 10px;
-}
-/* line 196, sass/_base.scss */
+/* line 279, sass/_base.scss */
 .card img {
   display: block;
   width: 100% \9;
   max-width: 100%;
   height: auto;
 }
+/* line 14, sass/_mixins.scss */
+.card:before, .card:after {
+  content: " ";
+  display: table;
+}
+/* line 19, sass/_mixins.scss */
+.card:after {
+  clear: both;
+}
 
-/* line 201, sass/_base.scss */
+/* line 287, sass/_base.scss */
 .page-title {
   position: relative;
   width: 100%;
@@ -602,13 +703,13 @@ a:active, a:focus {
   padding: 6px 30px;
 }
 @media (min-width: 768px) {
-  /* line 201, sass/_base.scss */
+  /* line 287, sass/_base.scss */
   .page-title {
     width: 25%;
   }
 }
 @media (min-width: 992px) {
-  /* line 201, sass/_base.scss */
+  /* line 287, sass/_base.scss */
   .page-title {
     width: 25%;
   }
@@ -623,12 +724,12 @@ a:active, a:focus {
   clear: both;
 }
 
-/* line 214, sass/_base.scss */
+/* line 300, sass/_base.scss */
 .lrg-txt {
   height: auto !important;
 }
 
-/* line 218, sass/_base.scss */
+/* line 304, sass/_base.scss */
 .take-me {
   background-color: #212121;
   width: 100%;
@@ -636,9 +737,26 @@ a:active, a:focus {
   color: #fff;
   font-size: 1.3em;
 }
-/* line 225, sass/_base.scss */
+/* line 311, sass/_base.scss */
 .take-me a {
   color: #fff !important;
+}
+
+/* line 14, sass/_mixins.scss */
+.row:before, .row:after {
+  content: " ";
+  display: table;
+}
+/* line 19, sass/_mixins.scss */
+.row:after {
+  clear: both;
+}
+
+/* line 319, sass/_base.scss */
+.order-card {
+  width: 50%;
+  padding: 10px;
+  float: left;
 }
 
 /* line 2, sass/_scaffold.scss */
@@ -1219,7 +1337,7 @@ img {
   padding-right: 15px;
   padding: 0px 20px;
   float: left;
-  font-size: 1.4em;
+  font-size: 1.3em;
 }
 @media (min-width: 768px) {
   /* line 8, sass/_checkout.scss */
@@ -1556,7 +1674,7 @@ label {
   padding-right: 15px;
   padding: 0px 20px;
   float: left;
-  font-size: 1.4em;
+  font-size: 1.3em;
 }
 @media (min-width: 768px) {
   /* line 9, sass/_client.scss */
@@ -1580,9 +1698,30 @@ label {
 .user-info h3 {
   margin-bottom: 20px;
 }
-/* line 19, sass/_client.scss */
-.user-info .card {
+
+/* line 21, sass/_client.scss */
+.card-max {
   padding: 25px 25px;
+}
+
+/* line 25, sass/_client.scss */
+.card-min {
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 8px;
+  background: #E7E7E7;
+  border: none;
+  margin-bottom: 12px;
+}
+/* line 32, sass/_client.scss */
+.card-min p {
+  margin: 0px;
+  padding-top: 4px;
+  float: left;
+}
+/* line 37, sass/_client.scss */
+.card-min a {
+  float: right;
 }
 
 /* line 1, sass/_table.scss */
@@ -1692,5 +1831,144 @@ label {
   /* line 23, sass/_table.scss */
   .table-body .item {
     width: 16.66667%;
+  }
+}
+
+/* line 1, sass/_stephani.scss */
+#page-content {
+  padding: 30px;
+}
+
+/* line 5, sass/_stephani.scss */
+#page-content h3 {
+  font-size: 2em;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* line 11, sass/_stephani.scss */
+#page-content h4 {
+  font-size: 1.6em;
+  font-weight: bold;
+}
+
+/* line 16, sass/_stephani.scss */
+#page-content p {
+  margin-bottom: 10px;
+}
+
+/* line 20, sass/_stephani.scss */
+#page-content ul {
+  font-size: 1.4em;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+/* line 27, sass/_stephani.scss */
+.bottom-nav {
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 0px;
+  padding-left: 11px;
+}
+
+/* line 35, sass/_stephani.scss */
+.bottom-nav ul li {
+  float: left;
+  padding: 10px;
+  color: #ffffff;
+  font-size: 1.5em;
+}
+
+/* line 42, sass/_stephani.scss */
+.bottom-nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* line 47, sass/_stephani.scss */
+.bottom-nav a:hover {
+  color: #6982D9;
+}
+
+/* line 51, sass/_stephani.scss */
+.bottom-nav li:before {
+  padding-right: 5px;
+}
+
+/* line 56, sass/_stephani.scss */
+.bottom-nav li:first-child:before {
+  content: none;
+}
+
+@media screen and (max-width: 768px) {
+  /* line 3, sass/_nevy.scss */
+  .search {
+    float: right;
+    margin-top: -48px;
+  }
+
+  /* line 7, sass/_nevy.scss */
+  .nav-links {
+    margin-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  /* line 14, sass/_mixins.scss */
+  .nav-links:before, .nav-links:after {
+    content: " ";
+    display: table;
+  }
+  /* line 19, sass/_mixins.scss */
+  .nav-links:after {
+    clear: both;
+  }
+
+  /* line 14, sass/_nevy.scss */
+  .nav-links li {
+    display: inline;
+    padding: 25px;
+  }
+
+  /* line 18, sass/_nevy.scss */
+  .credits {
+    position: relative;
+    margin-top: 30px;
+  }
+
+  /* line 23, sass/_nevy.scss */
+  .cart-item {
+    width: 20%;
+  }
+
+  /* line 27, sass/_nevy.scss */
+  .cart-info {
+    width: 30%;
+  }
+
+  /* line 31, sass/_nevy.scss */
+  .cart-info h1 {
+    font-size: 2.3em;
+  }
+
+  /* line 35, sass/_nevy.scss */
+  .cart-quantity {
+    width: 20%;
+  }
+
+  /* line 39, sass/_nevy.scss */
+  .cart-quantity h1 {
+    font-size: 5em;
+  }
+
+  /* line 44, sass/_nevy.scss */
+  .cart-price {
+    width: 20%;
+  }
+
+  /* line 48, sass/_nevy.scss */
+  .cart-price h1 {
+    font-size: 5em;
   }
 }

@@ -29,11 +29,19 @@ $id = intval($_GET['id']);
 	<?php 
 
 	if(!empty($id)){
-		$sql = "SELECT * FROM products WHERE id = '$id' ";
+
+		$cart_items = $_SESSION['cart_items'];
+	
+		$cart_array = "'" . implode("','", $cart_items) . "'";
+
+		print ($cart_array);
+		$sql = "SELECT * FROM products where id in ({$cart_array})";
+		//$sql = "SELECT * FROM products WHERE id = '$id' ";
 		$result = mysqli_query(get_dbconnection(),$sql);
 
-		$row = mysqli_fetch_assoc($result);
-		//print_r($row);
+		//print_r($result);
+		while($row = mysqli_fetch_assoc($result)) {
+		
 
 		$outhtml = "<div class='cart-body'>";
 		$outhtml .= "<div class='cart-item'>";
@@ -53,10 +61,16 @@ $id = intval($_GET['id']);
 		$outhtml .= "</div>";
 		$outhtml .= "</div>";
 
-		$outhtml .= "<div class='cart-footer'>";
-		$outhtml .= "<h2>Subtotal:<span class='subtotal'> $".$row['price']."</span></h2>";
-		$outhtml .= "<a href='checkout.php?id=".$row['id']."'  class='button-a'>Checkout</a>";
+		$subtotal +=  $row['price'];
+		echo $outhtml;
+
+		}
+
+		$outhtml = "<div class='cart-footer'>";
+		$outhtml .= "<h2>Subtotal:<span class='subtotal'> $".$subtotal."</span></h2>";
+		$outhtml .= "<a href='checkout.php' class='button-a'>Checkout</a>";
 		$outhtml .= "</div>";
+
 		echo $outhtml;
 
 	} else {

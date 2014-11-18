@@ -2,6 +2,9 @@
 		<div class="content">
 	        <?php include 'subnav.php' ?>
 
+
+	     
+
 			<?php 
 
 				//Grab Forum Data
@@ -48,9 +51,13 @@
 					echo "You already have an account!";
 
 				}else{
-					$sql="INSERT INTO Users (fname, lname, email, password) VALUES ('$userfname', '$userlname', '$useremail','$hash')";
+					$sql="INSERT INTO Users (fname, lname, email, password, privilege) VALUES ('$userfname', '$userlname', '$useremail','$hash','2')";
 					$result=mysqli_query(get_dbconnection(),$sql);
 					echo "Welcome, ".$userfname."!";
+
+					session_start();
+					$_SESSION['currentuser'] = $useremail;
+					header('Location: account.php');
 				}
 				?>
 

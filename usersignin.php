@@ -35,10 +35,11 @@
 					// If they are correct.
 					if ($check == 1) {
 						session_start();
-						session_unset(); 
+						//session_unset(); 
 						$_SESSION["currentuser"] = $useremail;
 
 						echo 'Hello, '.$useremail."!";
+						header('Location: home.php');
 
 					}else{
 						echo 'Wrong password.';

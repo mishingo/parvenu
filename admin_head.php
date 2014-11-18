@@ -5,8 +5,8 @@
     <head>
         <meta charset="utf-8">
      
-        <title>parvenu nouveau fashion</title>
-        <meta name="description" content="">
+        <title><?php echo $pageTitle; ?></title>
+        <meta name="description" content="<?php echo $pageDescription; ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" href="css/style.css">
@@ -30,8 +30,23 @@
             <div class="nav-links">
                 <ul>
                     <li> <a href="admin.php">Add Products</a> </li>
-                    <li> <a href="admin_fulfillment.php"> Fulfillment </a> </li>
                     <li> <a href="admin_inventory.php">Inventory</a> </li>
+                    <li> <a href="admin_orders.php">Orders</a> </li>
+                    <?php 
+                        session_start();
+
+                        $email = $_SESSION['currentuser'];
+
+                        $sql = "SELECT * FROM Users WHERE email = '$email' ";
+                        $result = mysqli_query(get_dbconnection(),$sql);
+
+                        $row = mysqli_fetch_assoc($result);
+
+
+                        if($row['privilege'] == 0){
+                            echo "<li> <a href=\"admin_users.php\">Users</a> </li>";
+                        }
+                    ?>
                     
                 </ul>
             </div>

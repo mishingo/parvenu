@@ -1,5 +1,8 @@
 <?php
 
+	session_start();
+
+
 // Sandbox
 $host = 'https://api.sandbox.paypal.com';
 $clientId = 'AezwlxAiACmf3VH-8IjA2o9B7rdIy6XKQi5D_qZspFP9JXvuHQVZGGj6XhvE';
@@ -8,70 +11,28 @@ $token = '';
 
 //Payment Info
 
-//Payment Info
-
 if(isset($_GET['cardType'])) {
         $cardType = $_GET['cardType'];
-        echo $cardType;
-        echo "\r\n";
-        ?>
-        <br />
-        <?php
     }
 if(isset($_GET['cardNumber'])) {
         $cardNumber = $_GET['cardNumber'];
-        echo $cardNumber;
-        echo "\r\n";
-        ?>
-        <br />
-        <?php
     }
 if(isset($_GET['cardName'])) {
         $cardName = $_GET['cardName'];
         $cardName = explode(" ", $cardName);
-        echo $cardName[0];
-        echo "\r\n";
-        ?>
-        <br />
-        <?php
-        echo $cardName[1];
-        echo "\r\n";
-        ?>
-        <br />
-        <?php
     }
 if(isset($_GET['expMonth'])) {
         $expMonth = $_GET['expMonth'];
-        echo $expMonth;
-        echo "\r\n";
-        ?>
-        <br />
-        <?php
     }
 if(isset($_GET['expYear'])) {
         $expYear = $_GET['expYear'];
-        echo $expYear;
-        echo "\r\n";
-        ?>
-        <br />
-        <?php
     }
  if(isset($_GET['cardCode'])) {
         $cardCode = $_GET['cardCode'];
-        echo $cardCode;
-        echo "\r\n";
-        ?>
-        <br />
-        <?php
     }
 
  if(isset($_GET['cartTotal'])) {
         $cartTotal = $_GET['cartTotal'];
-        echo $cartTotal;
-        echo "\r\n";
-        ?>
-        <br /> <br />
-        <?php
     }
 
 
@@ -85,7 +46,6 @@ function get_access_token($url, $postdata) {
 	curl_setopt($curl, CURLOPT_HEADER, false); 
 	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true); 
 	curl_setopt($curl, CURLOPT_POSTFIELDS, $postdata); 
-#	curl_setopt($curl, CURLOPT_VERBOSE, TRUE);
 	$response = curl_exec( $curl );
 	if (empty($response)) {
 	    // some kind of an error happened
@@ -93,14 +53,9 @@ function get_access_token($url, $postdata) {
 	    curl_close($curl); // close cURL handler
 	} else {
 	    $info = curl_getinfo($curl);
-		echo "Time took: " . $info['total_time']*1000 . "ms\n";
-		?> <br /> <?php
 	    curl_close($curl); // close cURL handler
 		if($info['http_code'] != 200 && $info['http_code'] != 201 ) {
-			echo "Received error: " . $info['http_code']. "\n";
-			?> <br /> <?php
-			echo "Raw response:".$response."\n";
-			?> <br /> <?php
+			$_SESSION["paymentMessage"] = "Your payment couldn't be processed at this time. Please check your information and try again.";
 			die();
 	    }
 	}
@@ -124,7 +79,6 @@ function make_post_call($url, $postdata) {
 				));
 	
 	curl_setopt($curl, CURLOPT_POSTFIELDS, $postdata); 
-	#curl_setopt($curl, CURLOPT_VERBOSE, TRUE);
 	$response = curl_exec( $curl );
 	if (empty($response)) {
 	    // some kind of an error happened
@@ -132,15 +86,10 @@ function make_post_call($url, $postdata) {
 	    curl_close($curl); // close cURL handler
 	} else {
 	    $info = curl_getinfo($curl);
-		echo "Time took: " . $info['total_time']*1000 . "ms\n";
-		?> <br /> <?php
 
 	    curl_close($curl); // close cURL handler
 		if($info['http_code'] != 200 && $info['http_code'] != 201 ) {
-			echo "Received error: " . $info['http_code']. "\n";
-			?> <br /> <?php
-			echo "Raw response:".$response."\n";
-			?> <br /> <?php
+			$_SESSION["paymentMessage"] = "Your payment couldn't be processed at this time. Please check your information and try again.";
 			die();
 	    }
 	}
@@ -163,7 +112,6 @@ function make_get_call($url) {
 				'Content-Type: application/json'
 				));
 	
-	#curl_setopt($curl, CURLOPT_VERBOSE, TRUE);
 	$response = curl_exec( $curl );
 	if (empty($response)) {
 	    // some kind of an error happened
@@ -171,14 +119,9 @@ function make_get_call($url) {
 	    curl_close($curl); // close cURL handler
 	} else {
 	    $info = curl_getinfo($curl);
-		echo "Time took: " . $info['total_time']*1000 . "ms\n";
-		?> <br /> <?php
 	    curl_close($curl); // close cURL handler
 		if($info['http_code'] != 200 && $info['http_code'] != 201 ) {
-			echo "Received error: " . $info['http_code']. "\n";
-			?> <br /> <?php
-			echo "Raw response:".$response."\n";
-			?> <br /> <?php
+			$_SESSION["paymentMessage"] = "Your payment couldn't be processed at this time. Please check your information and try again.";
 			die();
 	    }
 	}
@@ -188,26 +131,14 @@ function make_get_call($url) {
 	return $jsonResponse;
 }
 
-echo "\n";
-?> <br /> <?php
-echo "Obtaining OAuth2 Access Token.... \n";
-?> <br /> <?php
-
-
+//Create token call info.
 $url = $host.'/v1/oauth2/token'; 
 $postArgs = 'grant_type=client_credentials';
+
+//Get token
 $token = get_access_token($url,$postArgs);
 
-
-echo "Got OAuth Token: ".$token;
-?> <br /> <?php
-echo "\n \n";
-?> <br /> <?php
-?> <br /> <?php
-echo "Making a Credit Card Payment... \n";
-?> <br /> <?php
-
-
+//Create payment call info.
 $url = $host.'/v1/payments/payment';
 $payment = array(
 		'intent' => 'sale',
@@ -233,8 +164,14 @@ $payment = array(
 				'description' => 'payment by a credit card using a test script'
 				))
 		);
+
+
 $json = json_encode($payment);
+
+//Send payment call
 $json_resp = make_post_call($url, $json);
+
+//Json Response Sort.
 foreach ($json_resp['links'] as $link) {
 	if($link['rel'] == 'self'){
 		$payment_detail_url = $link['href'];
@@ -266,27 +203,8 @@ foreach ($json_resp['transactions'] as $transaction) {
 	}
 }
 
-echo "Payment Created successfully: " . $json_resp['id'] ." with state '". $json_resp['state']."'\n";
-?> <br /> <?php
-echo "Payment related_resources:". $related_resource_count . "(". $related_resources.")";
-?> <br /> <?php
-echo "\n \n";
-?> <br /> <?php
-?> <br /> <?php
-echo "Obtaining Payment Details... \n";
-?> <br /> <?php
-$json_resp = make_get_call($payment_detail_url);
-echo "Payment details obtained for: " . $json_resp['id'] ." with state '". $json_resp['state']. "'";
-?> <br /> <?php
-echo "\n \n";
-?> <br /> <?php
-?> <br /> <?php
-echo "Obtaining Sale details...\n";
-?> <br /> <?php
-$json_resp = make_get_call($sale_detail_url);
-echo "Sale details obtained for: " . $json_resp['id'] ." with state '". $json_resp['state']."'";
-?> <br /> <?php
-echo "\n \n";
+$_SESSION["paymentMessage"] = "Thank you! Your payment has been processed.";
 
+header('Location: results.php');
 
 ?>

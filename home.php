@@ -1,4 +1,9 @@
-<?php include 'head.php'; ?>
+<?php 
+// Define variables for SEO
+$pageTitle = 'Parvenue Clothing and Accessories | Women&#39;s Luxury Fashion Shop';
+$pageDescription = 'Parvenue offers high quality, chic women&#39;s clothing including dresses, blouses, pants, sweaters, skirts, denim, accessories, and more. Shop online or in one of our stores.';
+
+include 'head.php'; ?>
 
         <div class="content">
             <?php include 'subnav.php' ?>

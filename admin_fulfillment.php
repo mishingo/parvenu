@@ -1,71 +1,62 @@
-<?php include 'admin_head.php'; 
-
+<?php 
+$pageTitle = 'Parvenue - Fulfillment';
+$pageDescription = 'Shopping Fulfillment';
+include 'admin_head.php'; 
 $category = "tops";
 $id = intval($_GET['id']);
-
 ?>
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.3/css/jquery.dataTables.min.css">
 
 <div class="content">
 <?php include 'subnav.php' ?>
 <div class="page-title">
-    <h2> Fulfillment: </h2>
+    <h2> Inventory: </h2>
   </div>
 
-<div class="table">
-	<div class="table-header">
-		<div class="item">
-			<p> Item </p>
-		</div>
-		<div class="item">
-			<p> SKU </p>
-		</div>
-		<div class="item">
-			<p> Weight </p>
-		</div>
-		<div class="item">
-			<p> Rec. Name </p>
-		</div>
-		<div class="item">
-			<p> Rec. Address </p>
-		</div>
-		<div class="item">
-			<p> Status </p>
-		</div>
 
-	</div>
-<?php
-	$sql = "SELECT * FROM products";
-	$result = mysqli_query(get_dbconnection(),$sql);
 
-	while($row = mysqli_fetch_assoc($result)) {
-		$outhtml  = "<div class='table-body'>";
-		$outhtml .=	"<div class='item'>";
-		$outhtml .= "<p>".$row['product_name']."</p>";
-		$outhtml .= "</div>";
-		$outhtml .= "<div class='item'>";
-		$outhtml .=	"<p>028323".$row['sku']."</p>";
-		$outhtml .= "</div>";
-		$outhtml .= "<div class='item'>";
-		$outhtml .= "<p>".$row['weight']." lbs.</p>";
-		$outhtml .= "</div>";
-		$outhtml .= "<div class='item'>";
-		$outhtml .= "<p> Roger Rabbit </p>";
-		$outhtml .= "</div>";
-		$outhtml .= "<div class='item'>";
-		$outhtml .= "<p> 4000 Central Fl. Blvd </p>";
-		$outhtml .= "</div>";
-		$outhtml .= "<div class='item'>";
-		$outhtml .= "<p> Received</p>";
-		$outhtml .= "</div>";
-		$outhtml .= "</div>";
+<table id="products" class="display" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>product name</th>
+                <th>description</th>
+                <th>category</th>
+                <th>sku</th>
+                <th>cost</th>
+                <th>price</th>
+                <th>weight</th>
+                <th>color</th>
+            </tr>
+        </thead>
+ 
+        <tfoot>
+            <tr>
+                <th>product name</th>
+                <th>description</th>
+                <th>category</th>
+                <th>sku</th>
+                <th>cost</th>
+                <th>price</th>
+                <th>weight</th>
+                <th>color</th>
+            </tr>
+        </tfoot>
+    </table>
 
-		echo $outhtml;
-	}
-?>
-<?php include 'footer.php'; ?> 
+
+
+<?php include 'footer.php'; ?>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="//cdn.datatables.net/1.10.3/js/jquery.dataTables.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('#products').dataTable( {
+        "processing": true,
+        "serverSide": true,
+        "ajax": "includes/inventory_json.php"
+    } );
+} );
+</script>
 </div>
 
-
-
- 
 </div>

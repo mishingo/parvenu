@@ -6,6 +6,17 @@
 
 	        <form action="usersignin.php" method="post">
 				<h2>Sign In</h2>
+				<?php 
+					$loginMessage = $_SESSION['loginMessage'];
+					if($loginMessage == 'Wrong password.'){
+						?> <p class="warning"> Your username or password is incorrect.</p> <?php
+					}else{
+						if($loginMessage == "Username not found."){
+						?> <p class="warning"> The username entered doesn't exist in our system.</p> <?php
+						}
+					}
+					unset($_SESSION['loginMessage']);
+				 ?>
 				<label for="siemail">Email: </label>
 				<input type="text" name="siemail"><br>
 				<label for="sipassword">Password: </label> 

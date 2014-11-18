@@ -25,7 +25,7 @@
 }
 
 .hero{
-	background: url('../img/hero.png') no-repeat center;
+	background: url('../img/hero.jpg') no-repeat center;
 	height: 350px;
 	-webkit-background-size: cover;
       -moz-background-size: cover;
@@ -139,6 +139,24 @@
 	cursor: pointer;
 	 transition: background-color 0.5s ease;
 	background: #6982D9;
+	text-decoration: none;
+
+}
+
+.button-small{
+	transition: background-color 0.5s ease;
+	padding: 5px 17px;
+	border-radius: 40px;
+	background: #8B69D9;
+	border: none;
+	color: #fff;
+}
+
+.button-small:hover{
+	cursor: pointer;
+	 transition: background-color 0.5s ease;
+	background: #6982D9;
+	text-decoration: none;
 
 }
 
@@ -166,6 +184,74 @@
 	transition: background-color 0.5s ease;
 	background: #6982D9;
 	color: #fff;
+	cursor: pointer;
+}
+
+.button-delete{
+	transition: background-color 0.5s ease;
+	margin-left: 15px;
+	 display: block;
+  width: 100px;
+  height: 40px;
+  margin-top: 30px;
+	margin-bottom: 20px;
+	padding: 10px 20px;
+  text-align: center;
+  border-radius: 40px;
+  background: #e13434;
+	border: none;
+	color: #fff;
+	font-size:1.4em;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.button-delete:hover{
+	text-decoration: none;
+	transition: background-color 0.5s ease;
+	background: #ba2929;
+	color: #fff;
+	cursor: pointer;
+}
+
+.button-inline{
+	transition: background-color 0.5s ease;
+	padding: 10px 20px;
+	border-radius: 40px;
+	background: #8B69D9;
+	border: none;
+	color: #fff;
+	margin-left: 20px;
+}
+
+.button-inline:hover{
+	text-decoration: none;
+	transition: background-color 0.5s ease;
+	background: #6982D9;
+	color: #fff;
+	cursor: pointer;
+}
+
+.form-group{
+	.form-update{
+		float: left;
+		width: 65% !important;
+	}
+
+}
+
+.card{
+	.form-update{
+		float: left;
+		width: 65% !important;
+	}
+}
+
+form{
+	@include clearfix();
+}
+textarea#product_description {
+	height: 120px;
 }
 
 .social-testimonial{
@@ -190,13 +276,13 @@
 	padding: 10px;
 	border: 1px solid #cecece;
 	border-radius: 6px;
-	p{
-		margin-top: 10px;
-	}
 	img{
 		@include img-responsive();
 	}
+	@include clearfix();
 }
+
+
 
 .page-title{
 	@include make-xs-column(12);
@@ -226,3 +312,14 @@ font-size: 1.3em;
 		color: #fff !important;
 	}
 }
+
+.row{
+	@include clearfix();
+}
+.order-card{
+	width: 50%;
+	padding: 10px;
+	float: left;
+}
+
+
